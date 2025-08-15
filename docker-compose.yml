@@ -1,0 +1,8 @@
+services:
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: warmachine_list_validator_development
+    ports:
+      - "3306:3306"
