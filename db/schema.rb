@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_15_164614) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_18_220457) do
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "display_name"
     t.string "email"
     t.string "role", default: "user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "omniauth_uid"
+    t.string "omniauth_provider"
     t.index ["email"], name: "index_users_on_email"
+    t.index ["omniauth_uid"], name: "index_users_on_omniauth_uid"
   end
 end
